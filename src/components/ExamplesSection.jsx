@@ -42,9 +42,11 @@ const examples = [
 export default function ExamplesSection() {
   return (
     <section className="space-y-8">
-      <div>
-        <h2 className="text-2xl md:text-3xl font-semibold">Ask the AI Copilot</h2>
-        <p className="mt-2 text-slate-300 max-w-2xl">Natural language insights with sources and confidence scoring. Try queries like these:</p>
+      <div className="flex items-end justify-between gap-4">
+        <div>
+          <h2 className="text-2xl md:text-3xl font-semibold text-slate-900">Ask the AI Copilot</h2>
+          <p className="mt-2 text-slate-600 max-w-2xl">Natural language insights with sources and confidence scoring. Try queries like these:</p>
+        </div>
       </div>
 
       <div className="grid md:grid-cols-2 gap-6">
@@ -58,16 +60,16 @@ export default function ExamplesSection() {
 
 function ExampleCard({ heading, prompt, response }) {
   return (
-    <div className="rounded-2xl border border-white/10 bg-slate-900/60 overflow-hidden">
-      <div className="px-4 py-2 text-xs text-slate-400 bg-slate-900/80 border-b border-slate-800/60">{heading}</div>
+    <div className="rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+      <div className="px-4 py-2 text-xs text-slate-600 bg-slate-50 border-b border-slate-200">{heading}</div>
       <div className="p-4 space-y-3">
-        <div className="bg-white/5 rounded-lg p-3">
-          <div className="text-xs text-slate-400 mb-1">You asked</div>
-          <pre className="text-[13px] text-slate-200 whitespace-pre-wrap leading-relaxed">"{prompt}"</pre>
+        <div className="rounded-lg border border-slate-200 bg-white p-3">
+          <div className="text-xs text-slate-500 mb-1">You asked</div>
+          <pre className="text-[13px] text-slate-900 whitespace-pre-wrap leading-relaxed">"{prompt}"</pre>
         </div>
-        <div className="bg-white/5 rounded-lg p-3">
-          <div className="text-xs text-slate-400 mb-1">Copilot</div>
-          <ul className="list-disc pl-5 text-sm text-slate-200 space-y-1">
+        <div className="rounded-lg border border-slate-200 bg-white p-3">
+          <div className="text-xs text-slate-500 mb-1">Copilot</div>
+          <ul className="list-disc pl-5 text-sm text-slate-900 space-y-1">
             {response.map((r, idx) => (
               <li key={idx}>{r}</li>
             ))}
