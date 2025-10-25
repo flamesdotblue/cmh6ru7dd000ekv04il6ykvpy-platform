@@ -1,28 +1,22 @@
-import { useState } from 'react'
+import React from 'react';
+import Hero from './components/Hero';
+import FeaturesSection from './components/FeaturesSection';
+import IndustrySection from './components/IndustrySection';
+import ExamplesSection from './components/ExamplesSection';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
-      </div>
-    </div>
-  )
-}
+    <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100">
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(50%_50%_at_50%_0%,rgba(56,189,248,0.15),rgba(2,6,23,0))]" />
+      <header className="container mx-auto px-4">
+        <Hero />
+      </header>
 
-export default App
+      <main className="container mx-auto px-4 space-y-20 pb-24">
+        <FeaturesSection />
+        <IndustrySection />
+        <ExamplesSection />
+      </main>
+    </div>
+  );
+}
